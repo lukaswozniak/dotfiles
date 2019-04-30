@@ -1,0 +1,3 @@
+. ~/.profile
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc

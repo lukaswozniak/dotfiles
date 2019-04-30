@@ -1,4 +1,16 @@
-default: base git shell tmux vim neovim st
+default: i3gaps
+
+i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3blocks\ i3lock\ dmenu\ xcompmgr s_i3gaps
+
+cli_only: base git shell tmux vim neovim st
+
+i3blocks: i_i3blocks s_i3blocks
+
+wallpaper: xorg i_xwallpaper s_wallpaper
+
+xorg: i_xorg-server s_xorg
+
+audio: i_pulseaudio\ pulseaudio-alsa s_audio
 
 st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses
 	@cd submodules/st && sudo make clean install && make clean
