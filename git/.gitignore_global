@@ -1,0 +1,11 @@
+# project-specific vim configurations
+.vimrc.local
+
+# npm things
+npm-debug.log
+
+# nohup out file
+nohup.out
+
+# ctags file
+tags
