@@ -1,6 +1,6 @@
 default: base git shell tmux vim neovim st
 
-st: base i_libxext\ libxft\ xorg-fonts-misc\ ncurses
+st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses
 	@cd submodules/st && sudo make clean install && make clean
 
 neovim: i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
