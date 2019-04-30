@@ -1,4 +1,7 @@
-default: git shell tmux vim neovim
+default: base git shell tmux vim neovim st
+
+st: base i_libxext\ libxft\ xorg-fonts-misc\ ncurses
+	@cd submodules/st && sudo make clean install && make clean
 
 neovim: i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
 	@nvim +PlugInstall +qall
@@ -49,6 +52,6 @@ i_%: base
 	@yay -S $* --noconfirm --needed &> /dev/null
 
 base:
-	@sudo pacman -S git stow curl wget --noconfirm --needed
-	@git submodule update --init --recursive
+	@sudo pacman -S base-devel git stow curl wget --noconfirm --needed
+	@git submodule update --init --recursive --remote
 	@cd submodules/yay && makepkg -si --noconfirm --needed
