@@ -1,0 +1,6 @@
+
+for ext in $HOME/.dotfiles_ext/*/$1
+do
+    [ -f "$ext" ] || continue
+    source "$ext"
+done

@@ -1,30 +1,30 @@
 default: i3gaps
 
-i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3blocks\ i3lock\ dmenu\ xcompmgr s_i3gaps
+i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3blocks\ i3lock\ dmenu\ xcompmgr s_i3gaps extensions
 
-cli_only: base git shell tmux vim neovim st
+cli_only: base git shell tmux vim neovim st extensions
 
-i3blocks: i_i3blocks s_i3blocks
+i3blocks: base i_i3blocks s_i3blocks
 
-wallpaper: xorg i_xwallpaper s_wallpaper
+wallpaper: base xorg i_xwallpaper s_wallpaper
 
-xorg: i_xorg-server s_xorg
+xorg: base i_xorg-server s_xorg
 
-audio: i_pulseaudio\ pulseaudio-alsa s_audio
+audio: base i_pulseaudio\ pulseaudio-alsa
 
 st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses
 	@cd submodules/st && sudo make clean install && make clean
 
-neovim: i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
+neovim: base i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
 	@nvim +PlugInstall +qall
 
 vim: neovim s_vim
 
-tmux: i_xclip\ tmux s_tmux
+tmux: base i_xclip\ tmux s_tmux
 
-shell: i_bash-completion\ fzf s_shell
+shell: base i_bash-completion\ fzf s_scripts s_shell
 
-git: i_diff-so-fancy s_git
+git: base i_diff-so-fancy s_git
 	@git config --global user.name "Łukasz Woźniak"
 	@git config --global user.email "lukas.wozniak@outlook.com"
 	@git config --global pager.diff "diff-so-fancy | less --tabs=4 -RFX"
@@ -56,14 +56,15 @@ git: i_diff-so-fancy s_git
 	@git config --global core.excludesfile "~/.gitignore_global"
 	@git config --global core.editor "vim"
 
-s_%: base
-	@stow -t "${HOME}" -v -R "$*"
-
-i_%: base
-	@echo "Installing package(s) $*"
-	@yay -S $* --noconfirm --needed &> /dev/null
+extensions: base s_extensions
+	@for d in $${HOME}/.dotfiles_ext/*; \
+	do								    \
+		make --directory=$$d;           \
+	done
 
 base:
 	@sudo pacman -S base-devel git stow curl wget --noconfirm --needed
 	@git submodule update --init --recursive --remote
 	@cd submodules/yay && makepkg -si --noconfirm --needed
+
+include common.mk

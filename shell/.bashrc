@@ -99,3 +99,5 @@ else
 fi
 
 unset use_color safe_term match_lhs sh
+
+source_extensions .bashrc
