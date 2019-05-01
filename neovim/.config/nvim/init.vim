@@ -400,5 +400,5 @@ call plug#end()
     highlight NonText ctermfg=19 guifg=#333333
     highlight ColorColumn ctermbg=green guibg=green
     " allow terminal opacity
-    highlight Normal guibg=none ctermbg=none
+    highlight Normal guibg=NONE ctermbg=NONE
 " }}}
