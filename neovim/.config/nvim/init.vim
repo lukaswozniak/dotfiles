@@ -398,6 +398,7 @@ call plug#end()
     " make the highlighting of tabs and other non-text less annoying
     highlight SpecialKey ctermfg=19 guifg=#333333
     highlight NonText ctermfg=19 guifg=#333333
-
     highlight ColorColumn ctermbg=green guibg=green
+    " allow terminal opacity
+    highlight Normal guibg=none ctermbg=none
 " }}}
