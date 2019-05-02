@@ -18,7 +18,7 @@ st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-dejavu
 neovim: base i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
 	@nvim +PlugInstall +qall
 
-vim: neovim s_vim
+vim: neovim i_vim s_vim
 
 tmux: base i_xclip\ tmux s_tmux
 
