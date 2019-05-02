@@ -1,6 +1,6 @@
 default: i3gaps
 
-i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3blocks\ i3lock\ dmenu\ xcompmgr s_i3gaps extensions
+i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3blocks\ i3lock\ dmenu\ xcompmgr\ ttf-dejavu s_i3gaps extensions
 
 cli_only: base git shell tmux vim neovim st extensions
 
@@ -12,7 +12,7 @@ xorg: base i_xorg-server s_xorg
 
 audio: base i_pulseaudio\ pulseaudio-alsa
 
-st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses
+st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-dejavu
 	@cd submodules/st && sudo make clean install && make clean
 
 neovim: base i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
