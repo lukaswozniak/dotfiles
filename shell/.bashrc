@@ -101,3 +101,7 @@ fi
 unset use_color safe_term match_lhs sh
 
 source_extensions .bashrc
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+    tmux
+fi
