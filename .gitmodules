@@ -3,4 +3,4 @@
 	url = https://aur.archlinux.org/yay.git
 [submodule "submodules/st"]
 	path = submodules/st
-	url = git@github.com:lukaswozniak/st.git
+	url = https://github.com/lukaswozniak/st.git
