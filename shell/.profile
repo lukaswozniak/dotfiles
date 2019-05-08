@@ -50,4 +50,4 @@ faded_purple="#8F3F71"
 faded_aqua="#427B58"
 faded_orange="#AF3A03"
 
-source_extensions .profile
+source source_extensions .profile
