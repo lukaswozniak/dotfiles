@@ -1,3 +1,3 @@
-setxkbmap -option terminate:ctrl_alt_bksp
 setxkbmap pl
+source ~/.screenlayout
 exec i3
