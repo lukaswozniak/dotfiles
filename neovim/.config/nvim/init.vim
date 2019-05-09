@@ -12,6 +12,13 @@ call plug#begin('~/.config/nvim/plugged')
     set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
     set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
+    if has('persistent_undo')
+        let myUndoDir = expand('$HOME/.vim-undo')
+        :silent call system('mkdir -p ' . myUndoDir)
+        let &undodir = myUndoDir
+        set undofile
+    endif
+
     if (has('nvim'))
         " show results of substition as they're happening
         " but don't open a split
