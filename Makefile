@@ -2,6 +2,11 @@ default: i3gaps
 
 i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3blocks\ i3lock\ dmenu\ xcompmgr\ ttf-dejavu s_i3gaps extensions
 
+dwm: cli_only xorg notifications audio wallpaper i_xorg-xinit\ dmenu\ freetype2\ libx11\ libxft\ libxinerama\ xcompmgr\ ttf-dejavu s_dwm extensions
+	@cd submodules/dwm && sudo make clean install
+
+notifications: i_libnotify\ dunst s_notifications
+
 cli_only: base git shell tmux vim neovim st extensions
 
 i3blocks: base i_i3blocks s_i3blocks
@@ -10,7 +15,7 @@ wallpaper: base xorg i_xwallpaper s_wallpaper
 
 xorg: base i_xorg-server s_xorg
 
-audio: base i_pulseaudio\ pulseaudio-alsa
+audio: base i_pulseaudio\ pulseaudio-alsa\ pasystray
 
 st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-dejavu
 	@cd submodules/st && sudo make clean install && make clean
