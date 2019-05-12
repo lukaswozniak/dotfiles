@@ -4,8 +4,7 @@ setwallpaper
 
 xcompmgr &
 pasystray --no-icon-tooltip --include-monitors &
+nm-applet &
 dunst &
 
-while :; do
-    ssh-agent dwm
-done
+exec dwm
