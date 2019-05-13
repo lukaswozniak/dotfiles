@@ -8,9 +8,9 @@ if [ -f /etc/bashrc ];then
 fi
 
 # completion and fzf
-[ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-source /usr/share/fzf/key-bindings.bash
-source /usr/share/fzf/completion.bash
+[ -r /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
+[ -r /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -r /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
 complete -cf sudo
 
 # some hacks from manjaro default bashrc
@@ -100,7 +100,9 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias vim='nvim'
+if command -v nvim &> /dev/null; then
+    alias vim='nvim'
+fi
 
 source source_extensions .bashrc
 
