@@ -320,6 +320,7 @@ call plug#begin('~/.config/nvim/plugged')
 
     " FZF {{{
         Plug '/usr/local/opt/fzf'
+        Plug '~/.fzf'
         Plug 'junegunn/fzf.vim'
         let g:fzf_layout = { 'down': '~25%' }
 
