@@ -17,7 +17,7 @@ xorg: base i_xorg-server s_xorg
 
 audio: base i_pulseaudio\ pulseaudio-alsa\ pasystray
 
-st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-dejavu
+st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-liberation
 	@cd submodules/st && sudo make clean install && make clean
 
 neovim: base i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
