@@ -271,6 +271,9 @@ call plug#begin('~/.config/nvim/plugged')
     " context-aware pasting
     Plug 'sickill/vim-pasta'
 
+    " some UNIX shell commands like :Chmod :SudoWrite
+    Plug 'tpope/vim-eunuch'
+
     " NERDTree {{{
         Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
         Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -373,9 +376,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     let g:ale_linters = {}
     let g:ale_fixers = {
-        \ '*': ['trim_whitespace', 'remove_trailing_lines'],
+        \ '*': ['trim_whitespace'],
     \}
     let g:ale_fix_on_save = 1
+    let g:ale_maximum_file_size = 32768
     nmap <silent><leader>af :ALEFix<cr>
     nmap <silent><leader>an :ALENext<cr>
     nmap <silent><leader>ap :ALEPrevious<cr>

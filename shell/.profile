@@ -1,5 +1,11 @@
 
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+for ext in $HOME/.dotfiles_ext/*/.scripts
+do
+    [ -d "$ext" ] || continue
+    export PATH="$PATH:$(du "$ext" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+done
+
 export EDITOR="nvim"
 export TERMINAL="st"
 
