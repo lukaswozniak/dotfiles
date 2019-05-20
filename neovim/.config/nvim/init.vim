@@ -5,7 +5,6 @@ call plug#begin('~/.config/nvim/plugged')
 " General {{{
     set autoread " detect when a file is changed
     set history=1000 " change history to 1000
-    set textwidth=130
     set colorcolumn=130
     set shell=$SHELL
 
@@ -393,6 +392,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'gustafj/vim-ttcn'
     Plug 'https://bitbucket.org/akrzyz/vim-cp-syntax.git'
+    Plug 'mfukar/robotframework-vim'
 " }}}
 
 
