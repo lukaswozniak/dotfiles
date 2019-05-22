@@ -49,6 +49,16 @@ call plug#begin('~/.config/nvim/plugged')
 
     " quickfix options
     set switchbuf+=usetab,newtab " openfiles in new tab, and reuse if file already opened
+
+    " splitting to right and below by default
+    set splitbelow
+    set splitright
+
+    " substitutions
+    set gdefault " global substitute by default
+
+    " automatic resize of splits
+    autocmd VimResized * wincmd =
 " }}}
 
 " Appearance {{{
@@ -213,6 +223,10 @@ call plug#begin('~/.config/nvim/plugged')
 
     " clear highlighted search
     noremap <space> :set hlsearch! hlsearch?<cr>
+
+    " map Q to @q in visual selections
+    xnoremap Q :'<,'>:normal @q<CR>
+
 " }}}
 
 " AutoGroups {{{
@@ -272,6 +286,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " some UNIX shell commands like :Chmod :SudoWrite
     Plug 'tpope/vim-eunuch'
+
+    " AyncRun command to run scripts async
+    Plug 'skywind3000/asyncrun.vim'
 
     " NERDTree {{{
         Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
