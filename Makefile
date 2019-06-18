@@ -9,7 +9,7 @@ notifications: i_libnotify\ dunst s_notifications
 
 cli_only: base git shell tmux vim neovim st extensions
 
-i3blocks: base i_i3blocks\ acpi s_i3blocks
+i3blocks: base i_i3blocks\ acpi\ sysstat s_i3blocks
 
 wallpaper: base xorg i_xwallpaper s_wallpaper
 
