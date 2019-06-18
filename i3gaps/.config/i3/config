@@ -1,5 +1,6 @@
 # vim: filetype=i3
 exec --no-startup-id xcompmgr
+exec --no-startup-id nm-applet
 exec --no-startup-id setwallpaper
 
 set $mod Mod4
@@ -23,6 +24,7 @@ bindsym $mod+z gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
 
 bar {
+    tray_output primary
 	font pango:mono 10
 	status_command i3blocks
 	mode dock
