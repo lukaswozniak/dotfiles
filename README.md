@@ -6,9 +6,9 @@ Each application's dotfiles are kept in a folder of the same name, containing tr
 make <application name>
 ```
 
-To use my default configuration, just run `make`. List of possible "full" setups:
-* ```make i3gaps```
-* ```make cli_only```
+To use my default configuration, just run `make`. List of additional programs:
+* ```make st```
+* ```make yay```
 
 You can write additional configurations which will extend the base dotfiles, by adding a folder in `$HOME/.dotfiles_ext`.
 Currently an extension can contain:

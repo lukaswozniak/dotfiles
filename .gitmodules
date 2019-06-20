@@ -4,9 +4,6 @@
 [submodule "submodules/st"]
 	path = submodules/st
 	url = https://github.com/lukaswozniak/st.git
-[submodule "submodules/dwm"]
-	path = submodules/dwm
-	url = https://github.com/lukaswozniak/dwm.git
 [submodule "submodules/tmux-sensible"]
 	path = submodules/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible

@@ -1,26 +1,11 @@
-default: i3gaps
-
-i3gaps: cli_only xorg audio wallpaper i_xorg-xinit\ i3-gaps\ i3lock\ dmenu\ xcompmgr\ ttf-dejavu\ network-manager-applet s_i3gaps i3blocks extensions
-
-dwm: cli_only xorg notifications audio wallpaper i_xorg-xinit\ network-manager-applet\ dmenu\ freetype2\ libx11\ libxft\ libxinerama\ xcompmgr\ ttf-dejavu s_dwm extensions
-	@cd submodules/dwm && sudo make clean install
-
-notifications: i_libnotify\ dunst s_notifications
-
-cli_only: base git shell tmux vim neovim st extensions
-
-i3blocks: base i_i3blocks\ acpi\ sysstat s_i3blocks
-
-wallpaper: base xorg i_xwallpaper s_wallpaper
-
-xorg: base i_xorg-server s_xorg
-
-audio: base i_pulseaudio\ pulseaudio-alsa\ pasystray
+default: cli_only
 
 st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-liberation
 	@cd submodules/st && sudo make clean install && make clean
 
-neovim: base i_ripgrep\ the_silver_searcher\ ptags\ neovim s_neovim
+cli_only: base git shell tmux vim neovim extensions
+
+neovim: base i_the_silver_searcher\ neovim s_neovim
 	@nvim +PlugInstall +qall
 
 vim: neovim i_vim s_vim
@@ -67,9 +52,11 @@ extensions: base s_extensions
 		make --directory=$$d;           \
 	done
 
-base:
-	@sudo pacman -S base-devel git stow curl wget --noconfirm --needed
-	@git submodule update --init --recursive --remote
+yay:
 	@cd submodules/yay && makepkg -si --noconfirm --needed
+
+base:
+	@sudo pacman -S stow --noconfirm --needed
+	@git submodule update --init --recursive --remote
 
 include common.mk

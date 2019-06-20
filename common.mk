@@ -6,4 +6,4 @@ s_%:
 
 i_%:
 	@echo "Installing package(s) $*"
-	@yay -S $* --noconfirm --needed &> /dev/null
+	@sudo pacman -S $* --noconfirm --needed &> /dev/null
