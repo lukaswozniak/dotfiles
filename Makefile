@@ -7,21 +7,24 @@ arch: install_arch configure
 
 debian: install_debian configure
 
-configure: backup make_extensions_configure git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
+configure: backup git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@nvim +PlugInstall +qall
+	@make make_extensions_configure
 
 backup:
 	@mv -u ~/.bashrc ~/.bashrc.bak
 	@mv -u ~/.profile ~/.profile.bak
 
-install_arch: install_common make_extensions_install_arch
+install_arch: install_common
 	@sudo pacman -S stow git diff-so-fancy bash-completion fzf tmux vim neovim the_sivler_searcher xclip --noconfirm --needed
+	@make make_extensions_install_arch
 
-install_debian: install_common make_extensions_install_debian
-	@sudo apt install stow git bash-completion tmux vim neovim silversearcher-ag xclip -y
+install_debian: install_common
+	@sudo apt install stow git bash-completion tmux vim neovim silversearcher-ag xclip wget curl -y
 	@git submodule update --init --remote submodules/diff-so-fancy submodules/fzf
 	@sudo ln -sf $(PWD)/submodules/diff-so-fancy/diff-so-fancy /usr/local/bin/
 	@./submodules/fzf/install --all
+	@make make_extensions_install_debian
 
 install_common:
 	@git submodule update --init --remote submodules/tmux-sensible

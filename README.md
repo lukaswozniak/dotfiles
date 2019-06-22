@@ -24,6 +24,6 @@ make configure
 You can write additional configurations which will extend the base dotfiles, by adding a folder in `$HOME/.dotfiles_ext`.
 Template for an extension is in folder `extensions/.dotfiles_ext/template`.
 Currently an extension must contain:
-* `Makefile` - with targets `install_arch`, `install_debian` and `configure`. Will be run before corresponding base target.
+* `Makefile` - with targets `install_arch`, `install_debian` and `configure`. Will be run after corresponding base target.
 * `.bashrc` - (optional) will be sourced in base `.bashrc`
 * `.profile` - (optional) will be sourced in base `.profile`
