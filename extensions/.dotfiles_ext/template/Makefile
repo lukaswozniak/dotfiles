@@ -1,1 +1,6 @@
-../../../common.mk
+
+configure:
+
+install_arch:
+
+install_debian:

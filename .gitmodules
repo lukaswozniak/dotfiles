@@ -1,9 +1,12 @@
 [submodule "submodules/yay"]
 	path = submodules/yay
 	url = https://aur.archlinux.org/yay.git
-[submodule "submodules/st"]
-	path = submodules/st
-	url = https://github.com/lukaswozniak/st.git
 [submodule "submodules/tmux-sensible"]
 	path = submodules/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "submodules/diff-so-fancy"]
+	path = submodules/diff-so-fancy
+	url = https://github.com/so-fancy/diff-so-fancy
+[submodule "submodules/fzf"]
+	path = submodules/fzf
+	url = https://github.com/junegunn/fzf

@@ -1,20 +1,32 @@
-default: cli_only
 
-st: base i_libxext\ libxft\ libxrender\ xorg-fonts-misc\ ncurses\ ttf-liberation
-	@cd submodules/st && sudo make clean install && make clean
+PWD = $(shell pwd)
 
-cli_only: base git shell tmux vim neovim extensions
+default: arch
 
-neovim: base i_the_silver_searcher\ neovim s_neovim
+arch: install_arch configure
+
+debian: install_debian configure
+
+configure: backup make_extensions_configure git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@nvim +PlugInstall +qall
 
-vim: neovim i_vim s_vim
+backup:
+	@mv -u ~/.bashrc ~/.bashrc.bak
+	@mv -u ~/.profile ~/.profile.bak
 
-tmux: base i_xclip\ tmux s_tmux
+install_arch: install_common make_extensions_install_arch
+	@sudo pacman -S stow git diff-so-fancy bash-completion fzf tmux vim neovim the_sivler_searcher xclip --noconfirm --needed
 
-shell: base i_bash-completion\ fzf s_scripts s_shell
+install_debian: install_common make_extensions_install_debian
+	@sudo apt install stow git bash-completion tmux vim neovim silversearcher-ag xclip -y
+	@git submodule update --init --remote submodules/diff-so-fancy submodules/fzf
+	@sudo ln -sf $(PWD)/submodules/diff-so-fancy/diff-so-fancy /usr/local/bin/
+	@./submodules/fzf/install --all
 
-git: base i_diff-so-fancy s_git
+install_common:
+	@git submodule update --init --remote submodules/tmux-sensible
+
+git: stow_git
 	@git config --global user.name "Łukasz Woźniak"
 	@git config --global user.email "lukas.wozniak@outlook.com"
 	@git config --global pager.diff "diff-so-fancy | less --tabs=4 -RFX"
@@ -46,17 +58,15 @@ git: base i_diff-so-fancy s_git
 	@git config --global core.excludesfile "~/.gitignore_global"
 	@git config --global core.editor "vim"
 
-extensions: base s_extensions
-	@for d in $${HOME}/.dotfiles_ext/*; \
-	do								    \
-		make --directory=$$d;           \
-	done
-
 yay:
+	@git submodule update --init --remote submodules/yay
 	@cd submodules/yay && makepkg -si --noconfirm --needed
 
-base:
-	@sudo pacman -S stow --noconfirm --needed
-	@git submodule update --init --recursive --remote
+stow_%:
+	@stow -t "${HOME}" -v -R "$*"
 
-include common.mk
+make_extensions_%: stow_extensions
+	@for d in $${HOME}/.dotfiles_ext/*; \
+	do \
+		make "$*" --directory=$$d; \
+	done
