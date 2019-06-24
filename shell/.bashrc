@@ -102,6 +102,8 @@ fi
 
 unset use_color safe_term match_lhs sh
 
+alias ssh='ssh -XY'
+
 if command -v nvim &> /dev/null; then
     alias vim='nvim'
 fi

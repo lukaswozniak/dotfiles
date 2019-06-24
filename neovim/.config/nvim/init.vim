@@ -64,8 +64,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Appearance {{{
     set number " show line numbers
     set nowrap " turn off line wrapping
-    set wrapmargin=8 " wrap lines when coming within n characters from side
-    set linebreak " set soft wrapping
     set showbreak=… " show ellipsis at breaking
     set autoindent " automatically set indent of new line
     set diffopt+=vertical
@@ -237,7 +235,6 @@ call plug#begin('~/.config/nvim/plugged')
         " automatically resize panes on resize
         autocmd VimResized * exe 'normal! \<c-w>='
         autocmd BufWritePost .vimrc,.vimrc.local,init.vim source %
-        autocmd BufWritePost .vimrc.local source %
         " save all files on focus lost, ignoring warnings about untitled buffers
         autocmd FocusLost * silent! wa
 
