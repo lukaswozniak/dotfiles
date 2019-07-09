@@ -403,6 +403,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 " }}}
 
+" Markbar {{{
+    Plug 'Yilin-Yang/vim-markbar'
+    nmap <leader>m <Plug>ToggleMarkbar
+" }}}
+
 " Language-Specific Configuration {{{
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'gustafj/vim-ttcn'
