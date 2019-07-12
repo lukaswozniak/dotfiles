@@ -408,6 +408,11 @@ call plug#begin('~/.config/nvim/plugged')
     nmap <leader>m <Plug>ToggleMarkbar
 " }}}
 
+" AdvancedSorters {{{
+    Plug 'vim-scripts/ingo-library'
+    Plug 'vim-scripts/AdvancedSorters'
+" }}}
+
 " Language-Specific Configuration {{{
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'gustafj/vim-ttcn'
