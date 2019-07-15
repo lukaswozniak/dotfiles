@@ -113,3 +113,6 @@ source source_extensions .bashrc
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
     tmux
 fi
+
+# disable CTRL+S stopping output
+stty -ixon
