@@ -7,13 +7,11 @@ arch: install_arch configure
 
 debian: install_debian configure
 
-configure: backup git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
+configure:
+	@mkdir -p ~/.config
+	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@nvim +PlugInstall +qall
 	@make make_extensions_configure
-
-backup:
-	@mv -u ~/.bashrc ~/.bashrc.bak
-	@mv -u ~/.profile ~/.profile.bak
 
 install_arch: install_common
 	@sudo pacman -S stow git diff-so-fancy bash-completion fzf tmux vim neovim the_silver_searcher xclip --noconfirm --needed
