@@ -65,7 +65,6 @@ call plug#begin('~/.config/nvim/plugged')
     set number " show line numbers
     set nowrap " turn off line wrapping
     set showbreak=… " show ellipsis at breaking
-    set autoindent " automatically set indent of new line
     set diffopt+=vertical
     set laststatus=2 " show the satus line all the time
     set wildmenu " enhanced command line completion
@@ -85,6 +84,8 @@ call plug#begin('~/.config/nvim/plugged')
     set softtabstop=4 " edit as if the tabs are 4 characters wide
     set shiftwidth=4 " number of spaces to use for indent and unindent
     set shiftround " round indent to a multiple of 'shiftwidth'
+    set autoindent " automatically set indent of new line
+    set cindent " automatically set indent of new line
 
     " code folding settings
     set foldmethod=syntax " fold based on indent
@@ -438,3 +439,6 @@ call plug#end()
     " allow terminal opacity
     highlight Normal guibg=NONE ctermbg=NONE
 " }}}
+
+
+com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
