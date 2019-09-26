@@ -249,6 +249,10 @@ call plug#begin('~/.config/nvim/plugged')
     " search inside files using ripgrep. This plugin provides an Ack command.
     Plug 'wincent/ferret'
 
+    let g:FerretExecutableArguments = {
+    \ 'ag': '--column --ignore tags'
+    \ }
+
     " insert or delete brackets, parens, quotes in pair
     Plug 'jiangmiao/auto-pairs'
 

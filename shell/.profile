@@ -1,4 +1,3 @@
-
 export PATH="$PATH:$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 for ext in $HOME/.dotfiles_ext/*/.scripts
 do
@@ -57,3 +56,5 @@ faded_aqua="#427B58"
 faded_orange="#AF3A03"
 
 source source_extensions .profile
+
+source ~/.bashrc
