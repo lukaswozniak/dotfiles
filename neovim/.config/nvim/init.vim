@@ -226,6 +226,11 @@ call plug#begin('~/.config/nvim/plugged')
     " map Q to @q in visual selections
     xnoremap Q :'<,'>:normal @q<CR>
 
+    " shortcut to yank current file name/path
+    nmap <leader>ft :let @" = expand("%:t")<cr>:let @+ = expand("%:t")<cr>:let @- = expand("%:t")<cr>
+    nmap <leader>fr :let @" = expand("%:t:r")<cr>:let @+ = expand("%:t:r")<cr>:let @- = expand("%:t:r")<cr>
+    nmap <leader>fp :let @" = expand("%:p")<cr>:let @+ = expand("%:p")<cr>:let @- = expand("%:p")<cr>
+
 " }}}
 
 " AutoGroups {{{
@@ -388,10 +393,10 @@ call plug#begin('~/.config/nvim/plugged')
     let g:ale_set_highlights = 1
     let g:ale_change_sign_column_color = 0
     let g:ale_sign_column_always = 1
-    " let g:ale_lint_delay = 1000
-    let g:ale_lint_on_text_changed = 'always'
+    let g:ale_lint_on_enter = '0'
+    let g:ale_lint_on_text_changed = 'never'
+    let g:ale_lint_on_filetype_changed = '0'
     let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-    " let g:ale_completion_enabled = 1
 
     let g:ale_linters = {}
     let g:ale_fixers = {
@@ -446,3 +451,6 @@ call plug#end()
 
 
 com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+
+map gj :execute "tabmove" tabpagenr() - 2 <CR>
+map gk :execute "tabmove" tabpagenr() + 1  <CR>
