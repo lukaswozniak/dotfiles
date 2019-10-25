@@ -8,8 +8,8 @@ call plug#begin('~/.config/nvim/plugged')
     set colorcolumn=130
     set shell=$SHELL
 
-    set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-    set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+    set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/tmp
+    set directory=~/.vim-tmp,~/.tmp,~/tmp,/tmp
 
     if has('persistent_undo')
         let myUndoDir = expand('$HOME/.vim-undo')
