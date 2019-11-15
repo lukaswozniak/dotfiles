@@ -9,6 +9,9 @@ debian: install_debian configure
 
 configure:
 	@mkdir -p ~/.config
+	@mkdir -p ~/.vim-tmp
+	@mkdir -p ~/.vim-undo
+	@mkdir -p ~/.tmp
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@nvim +PlugInstall +qall
 	@make make_extensions_configure
