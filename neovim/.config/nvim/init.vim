@@ -275,6 +275,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " tmux integration for vim
     Plug 'benmills/vimux'
+    nmap <leader>c :VimuxPromptCommand<cr>
+    nmap <leader>cc :VimuxRunLastCommand<cr>
+    Plug 'christoomey/vim-tmux-navigator'
 
     " enables repeating other supported plugins with the . command
     Plug 'tpope/vim-repeat'
