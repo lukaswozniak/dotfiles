@@ -7,6 +7,7 @@ done
 
 export EDITOR="nvim"
 export TERMINAL="st"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Start graphical server if i3 not already running.
 [ "$(tty)" = "/dev/tty1" ] && command -v i3 && ! pgrep -x i3 >/dev/null && exec startx
