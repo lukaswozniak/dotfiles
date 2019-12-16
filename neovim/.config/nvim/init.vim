@@ -426,6 +426,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-scripts/AdvancedSorters'
 " }}}
 
+" CamelCaseMotion {{{
+    Plug 'bkad/CamelCaseMotion'
+    let g:camelcasemotion_key = '<leader>'
+" }}}
+
 " Language-Specific Configuration {{{
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'gustafj/vim-ttcn'
