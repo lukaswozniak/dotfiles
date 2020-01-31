@@ -61,6 +61,7 @@ git: stow_git
 	@git config --global apply.whitespace "nowarn"
 	@git config --global core.excludesfile "~/.gitignore_global"
 	@git config --global core.editor "vim"
+	@git config --global rerere.enabled "true"
 
 yay:
 	@git submodule update --init --remote submodules/yay
