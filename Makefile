@@ -63,10 +63,22 @@ git: stow_git
 	@git config --global core.editor "vim"
 	@git config --global rerere.enabled "true"
 
+i3wm_arch: install_i3wm_arch stow_i3wm
+
+install_i3wm_arch: xorg_arch fonts_arch yay
+	@sudo pacman -S i3-gaps xss-lock i3lock xcompmgr dmenu network-manager-applet --noconfirm --needed
+	@yay -S polybar --noconfirm --needed
+
+xorg_arch:
+	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xwallpaper xdotool --noconfirm --needed
+
+fonts_arch: yay
+	@sudo pacman -S ttf-inconsolata ttf-linux-libertine noto-fonts-emoji --noconfirm --needed
+	@yay -S nerd-fonts-inconsolata --noconfirm --needed
+
 yay:
 	@git submodule update --init --remote submodules/yay
 	@cd submodules/yay && makepkg -si --noconfirm --needed
-
 stow_%:
 	@stow -t "${HOME}" -v -R "$*"
 
