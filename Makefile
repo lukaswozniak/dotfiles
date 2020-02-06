@@ -66,7 +66,7 @@ git: stow_git
 i3wm_arch: install_i3wm_arch stow_i3wm
 
 install_i3wm_arch: xorg_arch fonts_arch yay
-	@sudo pacman -S i3-gaps xss-lock i3lock xcompmgr dmenu network-manager-applet --noconfirm --needed
+	@sudo pacman -S i3-gaps xss-lock i3lock xcompmgr dmenu network-manager-applet playerctl --noconfirm --needed
 	@yay -S polybar --noconfirm --needed
 
 xorg_arch:
