@@ -121,7 +121,14 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-for_window [class="^.*"] border pixel 1
+# gaps config
+smart_gaps on
+smart_gaps inverse_outer
+gaps inner 6
+gaps outer 2
+
+# window rules
+for_window [class="^.*"] border pixel 3
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
