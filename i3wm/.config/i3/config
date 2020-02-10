@@ -127,6 +127,15 @@ smart_gaps inverse_outer
 gaps inner 6
 gaps outer 2
 
+# Windows decoration colors
+# class                  border  backgr. text    indicator child_border
+client.background:       #162025 #162025 #162025
+client.focused:          #efefef #162025 #bfbfbf #75404b   #75404b
+client.focused_inactive: #bfbfbf #162025 #bfbfbf #39402e   #39402e
+client.unfocused:        #bfbfbf #162025 #bfbfbf #39402e   #39402e
+client.urgent:           #bfbfbf #162025 #bfbfbf #39402e   #39402e
+client.placeholder:      #bfbfbf #162025 #bfbfbf #75404b   #75404
+
 # window rules
 for_window [class="^.*"] border pixel 3
 
