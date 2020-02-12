@@ -255,8 +255,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'dyng/ctrlsf.vim'
     let g:ctrlsf_default_view_mode = 'compact'
     let g:ctrlsf_mapping = { "next": "<C-n>", "prev": "<C-p>" }
-    nmap <leader>a :CtrlSF ''<left>
-    nmap <leader>ar :CtrlSF -R ''<left>
+    nmap <leader>a :CtrlSF -R ''<left>
 
     " insert or delete brackets, parens, quotes in pair
     Plug 'jiangmiao/auto-pairs'
