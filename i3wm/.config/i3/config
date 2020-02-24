@@ -5,7 +5,6 @@ font pango:DejaVu Sans Mono 8
 # startup apps
 exec --no-startup-id xcompmgr
 exec --no-startup-id $HOME/display_config.sh
-exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # screen locking
@@ -30,6 +29,7 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 focus_wrapping force
+focus_on_window_activation urgent
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -128,8 +128,8 @@ bindsym $mod+r mode "resize"
 # gaps config
 smart_gaps on
 smart_gaps inverse_outer
-gaps inner 6
-gaps outer 2
+gaps inner 3
+gaps top 3
 
 # Windows decoration colors
 # class                  border  backgr. text    indicator child_border
@@ -142,6 +142,11 @@ client.placeholder:      #bfbfbf #162025 #bfbfbf #75404b   #75404
 
 # window rules
 for_window [class="^.*"] border pixel 3
+for_window [class="^DOORS$"] floating enable
+for_window [class="^Windows Logon$"] floating enable
+for_window [class="^[Ww]fica$"] floating enable
+for_window [title="^Citrix maximized probe window$"] floating enable
+for_window [title="^ark$"] floating enable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
