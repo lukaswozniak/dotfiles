@@ -17,7 +17,7 @@ configure:
 	@make make_extensions_configure
 
 install_arch: install_common
-	@sudo pacman -S stow git diff-so-fancy bash-completion fzf tmux vim neovim the_silver_searcher xclip --noconfirm --needed
+	@sudo pacman -S stow git diff-so-fancy bash-completion fzf tmux vim neovim the_silver_searcher xclip openssh --noconfirm --needed
 	@make make_extensions_install_arch
 
 install_debian: install_common

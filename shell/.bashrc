@@ -91,6 +91,7 @@ if ${use_color} ; then
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
     alias less='less -R'
+    alias ssh='ssh -XY'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
