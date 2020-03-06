@@ -9,9 +9,6 @@ export EDITOR="nvim"
 export TERMINAL="st"
 export XDG_CONFIG_HOME="$HOME/.config"
 
-# Start graphical server if i3 not already running.
-[ "$(tty)" = "/dev/tty1" ] && command -v i3 && ! pgrep -x i3 >/dev/null && exec startx
-
 # set colors
 dark0_hard="#1D2021"
 dark0="#282828"
@@ -57,5 +54,8 @@ faded_aqua="#427B58"
 faded_orange="#AF3A03"
 
 source source_extensions .profile
+
+# Start graphical server if i3 not already running.
+[ "$(tty)" = "/dev/tty1" ] && command -v i3 && ! pgrep -x i3 >/dev/null && exec startx
 
 source ~/.bashrc
