@@ -3,8 +3,9 @@ set $mod Mod4
 font pango:DejaVu Sans Mono 8
 
 # startup apps
-exec --no-startup-id xcompmgr
 exec --no-startup-id $HOME/display_config.sh
+exec --no-startup-id xcompmgr
+exec --no-startup-id flameshot
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # screen locking
@@ -147,6 +148,10 @@ for_window [class="^Windows Logon$"] floating enable
 for_window [class="^[Ww]fica$"] floating enable
 for_window [title="^Citrix maximized probe window$"] floating enable
 for_window [title="^ark$"] floating enable
+
+# screenshot config
+#
+bindsym --release Print exec --no-startup-id flameshot gui
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
