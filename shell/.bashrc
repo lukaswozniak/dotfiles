@@ -92,6 +92,7 @@ if ${use_color} ; then
 	alias fgrep='fgrep --colour=auto'
     alias less='less -R'
     alias ssh='ssh -XY'
+    alias tmux='tmux -u'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
