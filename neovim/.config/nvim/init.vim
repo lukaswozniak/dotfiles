@@ -430,11 +430,18 @@ call plug#begin('~/.config/nvim/plugged')
     let g:camelcasemotion_key = '<leader>'
 " }}}
 
+" tag generation {{{
+    Plug 'ludovicchabant/vim-gutentags'
+" }}}
+
 " Language-Specific Configuration {{{
     Plug 'ekalinin/Dockerfile.vim'
     Plug 'gustafj/vim-ttcn'
     Plug 'https://bitbucket.org/akrzyz/vim-cp-syntax.git'
     Plug 'mfukar/robotframework-vim'
+    Plug 'pangloss/vim-javascript'
+    Plug 'nikvdp/ejs-syntax'
+    Plug 'lukaswozniak/wmnusmv.vim'
 " }}}
 
 
