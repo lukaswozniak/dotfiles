@@ -1,0 +1,22 @@
+
+
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +10%
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -10%
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86MicMute
+    pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+
+XF86AudioPlay
+    playerctl play-pause
+XF86AudioPause
+    playerctl pause
+XF86AudioStop
+    playerctl stop
+XF86AudioNext
+    playerctl next
+XF86AudioPrev
+    playerctl previous

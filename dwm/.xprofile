@@ -1,0 +1,8 @@
+#!/bin/sh
+
+setxkbmap -option caps:escape
+
+dwmblocks &
+sxhkd &
+
+source source_extensions .xprofile
