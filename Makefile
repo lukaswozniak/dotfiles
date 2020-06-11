@@ -66,15 +66,18 @@ git: stow_git
 i3wm_arch: install_i3wm_arch stow_i3wm st
 
 install_i3wm_arch: xorg_arch fonts_arch yay
-	@sudo pacman -S i3-gaps xss-lock i3lock xcompmgr dmenu network-manager-applet pulseaudio pulseaudio-alsa pavucontrol playerctl dbus python-dbus flameshot --noconfirm --needed
-	@yay -S polybar --noconfirm --needed
-
-xorg_arch:
-	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xwallpaper xdotool --noconfirm --needed
-
-fonts_arch: yay
+	@sudo pacman -S i3-gaps xss-lock i3lock xcompmgr dmenu network-manager-applet pulseaudio pulseaudio-alsa pavucontrol playerctl dbus python-dbus xwallpaper flameshot --noconfirm --needed
 	@sudo pacman -S ttf-inconsolata ttf-linux-libertine noto-fonts-emoji --noconfirm --needed
 	@yay -S nerd-fonts-inconsolata --noconfirm --needed
+	@yay -S polybar --noconfirm --needed
+
+dwm_arch : xorg_arch st
+	@sudo pacman -S ttf-liberation dmenu freetype2 libx11 libxft libxinerama
+	@git submodule update --init --remote submodules/dwm
+	@cd submodules/dwm && make install
+
+xorg_arch:
+	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xdotool --noconfirm --needed
 
 st:
 	@git submodule update --init --remote submodules/st

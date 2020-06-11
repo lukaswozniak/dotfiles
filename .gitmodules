@@ -13,3 +13,6 @@
 [submodule "submodules/st"]
 	path = submodules/st
 	url = https://github.com/lukaswozniak/st
+[submodule "submodules/dwm"]
+	path = submodules/dwm
+	url = https://github.com/lukaswozniak/dwm
