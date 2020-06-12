@@ -415,11 +415,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }
 " }}}
 
-" Markbar {{{
-    Plug 'Yilin-Yang/vim-markbar'
-    nmap <leader>m <Plug>ToggleMarkbar
-" }}}
-
 " AdvancedSorters {{{
     Plug 'vim-scripts/ingo-library'
     Plug 'vim-scripts/AdvancedSorters'
