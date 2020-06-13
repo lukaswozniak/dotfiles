@@ -20,3 +20,6 @@ XF86AudioNext
     playerctl next
 XF86AudioPrev
     playerctl previous
+
+Print
+    flameshot gui

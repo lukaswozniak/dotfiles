@@ -4,5 +4,6 @@ setxkbmap -option caps:escape
 
 dwmblocks &
 sxhkd &
+flameshot &
 
 source source_extensions .xprofile

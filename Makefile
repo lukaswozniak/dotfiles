@@ -73,11 +73,12 @@ install_i3wm_arch: xorg_arch fonts_arch yay
 
 dwm_arch: xorg_arch st stow_dwm sxhkd_arch
 	@sudo pacman -S ttf-liberation dmenu freetype2 libx11 libxft libxinerama xorg-setxkbmap --noconfirm --needed
+	@sudo pacman -S flameshot --noconfirm --needed
 	@git submodule update --init --remote submodules/dwm
 	@cd submodules/dwm && make install
 
 sxhkd_arch: stow_sxhkd
-	@sudo pacman -S sxhkd playerctl pulseaudio pulseaudio-alsa --noconfirm --needed
+	@sudo pacman -S sxhkd playerctl pulseaudio pulseaudio-alsa flameshot --noconfirm --needed
 
 xorg_arch:
 	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xdotool --noconfirm --needed
