@@ -77,7 +77,7 @@ dwm_arch: xorg_arch st stow_dwm sxhkd_arch
 	@cd submodules/dwm && make install
 
 sxhkd_arch: stow_sxhkd
-	@sudo pacman -S sxhkd --noconfirm --needed
+	@sudo pacman -S sxhkd playerctl pulseaudio pulseaudio-alsa --noconfirm --needed
 
 xorg_arch:
 	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xdotool --noconfirm --needed
