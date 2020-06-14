@@ -2,7 +2,7 @@
 
 setxkbmap -option caps:escape
 
-dwmblocks &
+slstatus &
 sxhkd &
 flameshot &
 
