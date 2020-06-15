@@ -1,1 +1,2 @@
+. ~/.xprofile
 exec dwm
