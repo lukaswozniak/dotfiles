@@ -6,4 +6,4 @@ slstatus &
 sxhkd &
 flameshot &
 
-source source_extensions .xprofile
+source source_extensions .xprofile &
