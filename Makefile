@@ -12,6 +12,7 @@ configure:
 	@mkdir -p ~/.vim-tmp
 	@mkdir -p ~/.vim-undo
 	@mkdir -p ~/.tmp
+	@rm ~/.profile ~/.bashrc -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@nvim +PlugInstall +qall
 	@make make_extensions_configure
