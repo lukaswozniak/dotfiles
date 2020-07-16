@@ -7,6 +7,8 @@ if [ -f /etc/bashrc ];then
     source /etc/bashrc
 fi
 
+export PKG_CONFIG_PATH=/usr/share/pkgconfig:$PKG_CONFIG_PATH
+
 # completion and fzf
 [ -r /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
 [ -r /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash

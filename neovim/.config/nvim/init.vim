@@ -459,7 +459,8 @@ call plug#end()
 " }}}
 
 
-com! FormatXML :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+com! FormatXML  :%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"
+com! FormatJSON :%!python -m json.tool
 
 map gj :execute "tabmove" tabpagenr() - 2 <CR>
 map gk :execute "tabmove" tabpagenr() + 1  <CR>
