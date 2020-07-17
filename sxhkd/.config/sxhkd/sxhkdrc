@@ -19,6 +19,12 @@ XF86AudioNext
 XF86AudioPrev
     playerctl previous
 
+XF86MonBrightnessDown
+    xbacklight -dec 5
+
+XF86MonBrightnessUp
+    xbacklight -inc 5
+
 Print
     flameshot gui
 

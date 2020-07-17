@@ -82,7 +82,7 @@ sxhkd_arch: stow_sxhkd
 	@sudo pacman -S sxhkd playerctl pulseaudio pulseaudio-alsa flameshot --noconfirm --needed
 
 xorg_arch:
-	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xdotool --noconfirm --needed
+	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xorg-xbacklight xdotool --noconfirm --needed
 
 st:
 	@git submodule update --init --remote submodules/st
