@@ -12,7 +12,7 @@ configure:
 	@mkdir -p ~/.vim-tmp
 	@mkdir -p ~/.vim-undo
 	@mkdir -p ~/.tmp
-	@rm ~/.profile ~/.bashrc -f
+	@rm ~/.profile ~/.bashrc ~/.bash_profile -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@nvim +PlugInstall +qall
 	@make make_extensions_configure
@@ -85,6 +85,7 @@ xorg_arch:
 	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xorg-xbacklight xdotool --noconfirm --needed
 
 st:
+	@sudo pacman -S libxft --noconfirm --needed
 	@git submodule update --init --remote submodules/st
 	@cd submodules/st && sudo make install
 
