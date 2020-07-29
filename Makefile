@@ -13,6 +13,7 @@ configure:
 	@mkdir -p ~/.vim-undo
 	@mkdir -p ~/.tmp
 	@mkdir -p ~/.dotfiles_ext
+	@mkdir -p ~/.cache/zsh
 	@rm ~/.profile ~/.bashrc ~/.bash_profile -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@sudo chsh $(USER) -s /bin/zsh
