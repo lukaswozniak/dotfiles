@@ -87,14 +87,6 @@ if ${use_color} ; then
 	else
 		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 	fi
-
-	alias ls='ls --color=auto'
-	alias grep='grep --colour=auto'
-	alias egrep='egrep --colour=auto'
-	alias fgrep='fgrep --colour=auto'
-    alias less='less -R'
-    alias ssh='ssh -XY'
-    alias tmux='tmux -u'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
@@ -106,11 +98,8 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias ssh='ssh -XY'
-
-if command -v nvim &> /dev/null; then
-    alias vim='nvim'
-fi
+# aliases
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 source source_extensions .bashrc
 

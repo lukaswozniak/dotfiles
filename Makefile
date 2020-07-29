@@ -14,11 +14,13 @@ configure:
 	@mkdir -p ~/.tmp
 	@rm ~/.profile ~/.bashrc ~/.bash_profile -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
+	@sudo chsh $(USER) -s /bin/zsh
 	@nvim +PlugInstall +qall
 	@make make_extensions_configure
 
-install_arch: install_common
-	@sudo pacman -S stow git diff-so-fancy bash-completion fzf tmux vim neovim the_silver_searcher xclip openssh --noconfirm --needed
+install_arch: install_common yay
+	@yay -S lf --noconfirm --needed
+	@sudo pacman -S stow git diff-so-fancy zsh zsh-syntax-highlighting bash-completion fzf tmux vim neovim the_silver_searcher xclip openssh --noconfirm --needed
 	@make make_extensions_install_arch
 
 install_debian: install_common

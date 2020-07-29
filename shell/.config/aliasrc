@@ -1,0 +1,13 @@
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias less='less -R'
+alias ssh='ssh -XY'
+alias tmux='tmux -u'
+
+if command -v nvim &> /dev/null; then
+    alias vim='nvim'
+fi
+
+source source_extensions aliasrc
