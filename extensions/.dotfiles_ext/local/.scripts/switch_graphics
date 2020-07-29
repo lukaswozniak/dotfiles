@@ -1,0 +1,10 @@
+#!/bin/sh
+
+current=`optimus-manager --print-mode`
+current=${current/*nvidia/nvidia}
+current=${current/*intel/intel}
+
+[ $current = "nvidia" ] && next="intel"
+[ $current = "intel" ] && next="nvidia"
+
+prompt "Switch graphics to $next?" "optimus-manager --switch $next --no-confirm"

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+autorandr --change
+mpris-proxy &
+nextcloud &
+pulseaudio --daemonize
+sxhkd -c ~/.dotfiles_ext/local/sxhkdrc &
+
+sudo cpupower frequency-set -u 3600MHz
