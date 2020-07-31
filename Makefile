@@ -14,7 +14,7 @@ configure:
 	@mkdir -p ~/.tmp
 	@mkdir -p ~/.dotfiles_ext
 	@mkdir -p ~/.cache/zsh
-	@rm ~/.profile ~/.bashrc ~/.bash_profile -f
+	@rm ~/.profile ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zsh_profile -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
 	@sudo chsh $(USER) -s /bin/zsh
 	@nvim +PlugInstall +qall
@@ -26,7 +26,7 @@ install_arch: install_common yay
 	@make make_extensions_install_arch
 
 install_debian: install_common
-	@sudo apt install stow git bash-completion tmux vim neovim silversearcher-ag xclip wget curl -y
+	@sudo apt install stow git bash-completion tmux vim neovim silversearcher-ag xclip wget curl zsh zsh-syntax-highlighting -y
 	@git submodule update --init --remote submodules/diff-so-fancy submodules/fzf
 	@sudo ln -sf $(PWD)/submodules/diff-so-fancy/diff-so-fancy /usr/local/bin/
 	@./submodules/fzf/install --all
