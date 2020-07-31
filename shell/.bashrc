@@ -106,6 +106,6 @@ source source_extensions .bashrc
 # disable CTRL+S stopping output
 stty -ixon
 
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+if [ -n "$PS1" ] && [ -z "$TMUX" ]; then
     tmux
 fi
