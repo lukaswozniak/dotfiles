@@ -58,5 +58,3 @@ source source_extensions .profile
 
 # Start graphical server if i3 not already running.
 [ "$(tty)" = "/dev/tty1" ] && command -v i3 && ! pgrep -x i3 >/dev/null && exec startx
-
-source ~/.bashrc
