@@ -68,6 +68,7 @@ git: stow_git
 	@git config --global core.editor "vim"
 	@git config --global rerere.enabled "true"
 	@git config --global rebase.autoStash true
+	@git config --global push.default upstream
 
 i3wm_arch: install_i3wm_arch stow_i3wm st
 
