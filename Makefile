@@ -16,7 +16,6 @@ configure:
 	@mkdir -p ~/.cache/zsh
 	@rm ~/.profile ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zsh_profile -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
-	@chsh $(USER) -s /bin/zsh
 	@nvim +PlugInstall +qall
 	@make make_extensions_configure
 
