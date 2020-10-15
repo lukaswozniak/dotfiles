@@ -30,3 +30,6 @@ Print
 
 super + x ; b
    chromium
+
+super + P
+    j4-dmenu-desktop

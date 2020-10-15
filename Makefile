@@ -12,7 +12,7 @@ configure:
 	@mkdir -p ~/.vim-tmp
 	@mkdir -p ~/.vim-undo
 	@mkdir -p ~/.tmp
-	@mkdir -p ~/.dotfiles_ext
+	@mkdir -p ~/.dotfiles_ext/local
 	@mkdir -p ~/.cache/zsh
 	@rm ~/.profile ~/.bashrc ~/.bash_profile ~/.zshrc ~/.zsh_profile -f
 	@make git stow_neovim stow_vim stow_tmux stow_scripts stow_shell
@@ -85,6 +85,7 @@ dwm_arch: xorg_arch st stow_dwm sxhkd_arch
 
 sxhkd_arch: stow_sxhkd
 	@sudo pacman -S sxhkd playerctl pulseaudio pulseaudio-alsa flameshot --noconfirm --needed
+	@yay -S j4-dmenu-desktop --noconfirm --needed
 
 xorg_arch:
 	@sudo pacman -S xorg-server xorg-xwininfo xorg-xinit xorg-xrandr xorg-xbacklight xdotool --noconfirm --needed
