@@ -258,9 +258,6 @@ call plug#begin('~/.config/nvim/plugged')
     let g:ctrlsf_absolute_file_path = 1
     nmap <leader>a :CtrlSF -R ''<left>
 
-    " insert or delete brackets, parens, quotes in pair
-    Plug 'jiangmiao/auto-pairs'
-
     " easy commenting motions - shortcut gcc
     Plug 'tpope/vim-commentary'
 
@@ -391,7 +388,7 @@ call plug#begin('~/.config/nvim/plugged')
 " }}}
 
 " ALE {{{
-    Plug 'w0rp/ale' " Asynchonous linting engine
+    Plug 'dense-analysis/ale' " Asynchonous linting engine
     let g:ale_set_highlights = 1
     let g:ale_change_sign_column_color = 0
     let g:ale_sign_column_always = 1
@@ -399,13 +396,10 @@ call plug#begin('~/.config/nvim/plugged')
     let g:ale_lint_on_text_changed = 'never'
     let g:ale_lint_on_filetype_changed = '0'
     let g:ale_echo_msg_format = '%severity% %s% [%linter%% code%]'
-
-    let g:ale_linters = {}
-    let g:ale_fixers = {
-        \ '*': ['trim_whitespace'],
-    \}
     let g:ale_fix_on_save = 1
-    let g:ale_maximum_file_size = 32768
+
+    let g:ale_linters = {'cpp': ['gcc'], 'javascript': ['eslint']}
+    let g:ale_fixers = {'javascript': ['eslint'], '*': ['trim_whitespace']}
     nmap <silent><leader>af :ALEFix<cr>
     nmap <silent><leader>an :ALENext<cr>
     nmap <silent><leader>ap :ALEPrevious<cr>
@@ -435,7 +429,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'https://bitbucket.org/akrzyz/vim-cp-syntax.git'
     Plug 'mfukar/robotframework-vim'
     Plug 'pangloss/vim-javascript'
-    Plug 'nikvdp/ejs-syntax'
+    Plug 'briancollins/vim-jst'
     Plug 'lukaswozniak/wmnusmv.vim'
 " }}}
 
