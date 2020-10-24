@@ -21,7 +21,7 @@ configure:
 
 install_arch: install_common yay
 	@yay -S lf --noconfirm --needed
-	@sudo pacman -S stow git diff-so-fancy zsh zsh-syntax-highlighting bash-completion fzf tmux vim neovim the_silver_searcher xclip openssh --noconfirm --needed
+	@sudo pacman -S stow git diff-so-fancy zsh zsh-syntax-highlighting bash-completion fzf tmux vim neovim the_silver_searcher xclip openssh yarn --noconfirm --needed
 	@make make_extensions_install_arch
 
 install_debian: install_common
