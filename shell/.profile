@@ -7,7 +7,7 @@ done
 
 export EDITOR="nvim"
 export TERMINAL="st"
-export BROWSER="chromium"
+export BROWSER="google-chrome-stable"
 export XDG_CONFIG_HOME="$HOME/.config"
 export PKG_CONFIG_PATH=/usr/share/pkgconfig:$PKG_CONFIG_PATH
 
