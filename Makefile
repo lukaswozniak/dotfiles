@@ -79,7 +79,7 @@ install_i3wm_arch: xorg_arch fonts_arch yay
 	@yay -S polybar --noconfirm --needed
 
 dwm_arch: xorg_arch st stow_dwm sxhkd_arch
-	@sudo pacman -S ttf-liberation dmenu freetype2 libx11 libxft libxinerama xorg-setxkbmap --noconfirm --needed
+	@sudo pacman -S ttf-liberation dmenu freetype2 libx11 libxft libxinerama xorg-setxkbmap autorandr --noconfirm --needed
 	@sudo pacman -S flameshot --noconfirm --needed
 	@git submodule update --init --remote submodules/dwm
 	@cd submodules/dwm && make install

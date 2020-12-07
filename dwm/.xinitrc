@@ -1,2 +1,0 @@
-. ~/.xprofile
-exec dwm
