@@ -70,14 +70,6 @@ git: stow_git
 	@git config --global push.default upstream
 	@git config --global pull.rebase true
 
-i3wm_arch: install_i3wm_arch stow_i3wm st
-
-install_i3wm_arch: xorg_arch fonts_arch yay
-	@sudo pacman -S i3-gaps xss-lock i3lock xcompmgr dmenu network-manager-applet pulseaudio pulseaudio-alsa pavucontrol playerctl dbus python-dbus xwallpaper flameshot --noconfirm --needed
-	@sudo pacman -S ttf-inconsolata ttf-linux-libertine noto-fonts-emoji --noconfirm --needed
-	@yay -S nerd-fonts-inconsolata --noconfirm --needed
-	@yay -S polybar --noconfirm --needed
-
 dwm_arch: xorg_arch st stow_dwm sxhkd_arch
 	@sudo pacman -S ttf-liberation dmenu freetype2 libx11 libxft libxinerama xorg-setxkbmap autorandr --noconfirm --needed
 	@sudo pacman -S flameshot --noconfirm --needed
